@@ -1,0 +1,16 @@
+Record the coordinates for mouse location.
+My screen is 1280 in width (x), 720 in height (y)
+    Button              Coordinates
+
+Minimize                    1163, 17
+Close
+
+Top-left corner             0,0
+Top-right corner            1280, 0 
+Lower-left corner           0, 720
+Lower-right corner          1280, 720
+
+Browser search bar          541, 54
+Google search bar           552, 284
+Yt search bar               565, 105
+Facebook search bar         168, 113
