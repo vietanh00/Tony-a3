@@ -8,20 +8,69 @@ from style import *
 #Widgets: Minimize, Close
 #Entries: Query box, enter button
 #Calling Tk() also allows collecting screen resolution
-
-def screen_w(root):
-    width = root.winfo_screenwidth()
-    return width
-
-def screen_h(root):
-    height = root.winfo_screenheight()
-    return height
-
-def switch_mode(my_frame, all_frames):
-    for f in all_frames:
-        f.grid_remove()
-    my_frame.grid()
-
+elementz = []
+def screen_w(master):
+    return master.winfo_screenwidth()
+def screen_h(master):
+    return master.winfo_screenheight()
+def destroy_all():
+    global elementz
+    if len(elementz) > 0:
+        for b in elementz:
+            b.destroy()
+def track_btn(some_button):
+    global elementz
+    while some_button not in elementz:
+        elementz.append(some_button)
+def voice_mode(master):
+    global elementz
+    destroy_all()
+    voice_desc = Label(master, text="The application will try and recognize your voice command.", 
+        **main_app_text)
+    voice_recognized = Label(master, text="haha", **main_app_text)
+    track_btn(voice_desc)
+    track_btn(voice_recognized)
+    voice_desc.place(x=20, y = 50)
+    voice_recognized.place(x=20, y = 100)
+def text_mode(master):
+    global elementz
+    destroy_all()
+    text_desc  = Label(master, text="Type your command(s) in the box below, separated by commas", 
+        **main_app_text)
+    text_desc.place(x=20, y=50)
+    text_entry = StringVar()
+    text_box   = Entry(master, textvariable=text_entry)
+    text_box.place(x=20, y=70, width=300)
+    track_btn(text_desc)
+    track_btn(text_box)
+def record_mode(master):
+    global elementz
+    destroy_all()
+    new_macro_name  = StringVar()
+    macro_des       = Label(master, text="Click below to start recording a new macro.")
+    new_macro_label = Label(master, text="Your macro name:", **main_app_text)
+    new_macro_label.place(x=20, y=40)
+    new_macro_box   = Entry(master, textvariable=new_macro_name)
+    new_macro_box.place(x=20, y=60)
+    macro_record_btn = Button(master, text="Start recording", bg="#ffffff")
+    macro_record_btn.place(x=20, y=80)
+    track_btn(macro_des)
+    track_btn(new_macro_label)
+    track_btn(new_macro_box)
+    track_btn(macro_record_btn)
+def allrecorded_mode(master):
+    global elementz
+    destroy_all()
+    desc_allrecorded = Label(master, text="Below are your submitted macros.", 
+        **main_app_text)
+    desc_allrecorded.place(x=20, y=40)
+    track_btn(desc_allrecorded)
+def about_mode(master):
+    global elementz
+    destroy_all()
+    big_about = Label(master, text="About", **main_app_text, font=('Arial', 20))
+    big_about.place(x=20, y=30)
+    track_btn(big_about)
 def on_enter(e):
     e.widget['background'] = '#505050'
 def on_leave(e):
@@ -37,55 +86,24 @@ def gui_main():
     root.configure(bg="#1e1e1e")    
     #2) Main
     #2.1. Voice:  Recognize user speech and print it onto the application box
-    frame_voice = Frame(root, bg="#3c3c3c")
-    frame_voice.grid()
-    voice_desc = Label(frame_voice, text="The application will try and recognize your voice command.", 
-        fg="#ffffff")
-    voice_recognized = Label(frame_voice, text="", fg="#ffffff")
-    #2.2. Text:   Allow user-submitted command into a query box
-    frame_text = Frame(root, bg="#3c3c3c")
-    frame_text.grid()
-    text_desc  = Label(frame_text, text="Type your command(s) in the box below.", fg="#ffffff")
-    text_desc.pack(fill='x', expand=True)
-    text_entry = StringVar()
-    text_box   = Entry(frame_text, textvariable=text_entry)
-    text_box.pack(fill='x', expand=True)
-    #2.3. Record: Display recorded user-submitted commands
-    frame_record    = Frame(root, bg="#3c3c3c")
-    frame_record.grid()
-    new_macro_name  = StringVar()
-    macro_des       = Label(frame_record, text="Click below to start recording a new macro.")
-
-    new_macro_label = Label(frame_record, text="Your macro name:")
-    new_macro_label.pack(fill='x', expand=True)
-    new_macro_box   = Entry(frame_record, textvariable=new_macro_name)
-    new_macro_box.pack(fill='x', expand=True)
-    macro_record_btn = Button(frame_record, text="Start recording", **top_button_style)
-
+    #2.2. Text:   Allow user-submitted command into a query box    
     #2.4. Macros recorded: Display all user-recorded macros (name + date + description)
-    frame_allrecorded = Frame(root, bg="#3c3c3c")
-    frame_allrecorded.grid()
     #2.5. About:  Display project + team info
-    frame_about    = Frame(root, bg="#3c3c3c")
-    frame_about.grid()
+
     #1)Top bar: Selection between Voice mode, Text mode, and Macro (Record)
     #Start with voice mode by default
-    frame1 = Frame(root, bg="#3c3c3c")
-    frame1.place(x=0, y=0, width=400)
-    voice_button = Button(frame1, text="Voice",**top_button_style)
-    text_button = Button(frame1, text="Text",**top_button_style)
-    text_button.configure(command=lambda: switch_mode(frame_text))
-
-    record_button = Button(frame1, text="Record macro",**top_button_style)
-    all_recorded_button  = Button(frame1, text="Macros recorded",**top_button_style)
-    about_button = Button(frame1, text="About",**top_button_style)
+    voice_button = Button(root, text="Voice",**top_button_style, command=lambda: voice_mode(root))
+    text_button = Button(root, text="Text",**top_button_style, command=lambda:text_mode(root))
+    record_button = Button(root, text="Record macro",**top_button_style,
+        command=lambda:record_mode(root))
+    all_recorded_button  = Button(root, text="Macros recorded",**top_button_style, 
+        command=lambda:allrecorded_mode(root))
+    about_button = Button(root, text="About",**top_button_style, command=lambda:about_mode(root))
     top_buttons = [voice_button, text_button, record_button, all_recorded_button, about_button]
-    frame_mode = [frame_voice, frame_text, frame_record, frame_allrecorded, frame_about]
-    switch_mode(frame_voice, frame_mode)
     for i in range(0, len(top_buttons)):
         top_buttons[i].grid(column=i, row=0)
         button_hovered(top_buttons[i])
-        top_buttons[i].configure(command=lambda: switch_mode(frame_mode[i], frame_mode))
+    print("Tracking screen dimension")
     print(screen_h(root))
     print(screen_w(root))
     root.mainloop()

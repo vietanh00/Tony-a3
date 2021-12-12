@@ -4,3 +4,8 @@ top_button_style = {
     'fg':"#ffffff",
     'padx':4
 }
+
+main_app_text = {
+    'fg':"#ffffff",
+    'bg':"#1e1e1e"
+}
