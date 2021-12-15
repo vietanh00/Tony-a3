@@ -1,0 +1,6 @@
+@@ This file is created for team members to suggest commands.
+@@ Each line contains: index, command name, key combination, description (if needed)
+@@ Each element is separated by semi-colon (;)
+1; youtube next; shift-n; play the next video when on youtube
+2; youtube previous; shift-p; play the previous video when on youtube
+3; file explorer; windows-e; launch the windows file explorer
