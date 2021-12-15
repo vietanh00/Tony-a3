@@ -5,3 +5,7 @@
 2; youtube previous; shift-p; play the previous video when on youtube
 3; file explorer; windows-e; launch the windows file explorer
 4; close window; alt-f4; close the current window
+
+5; ctrl c to copy the code, and ctr p to paste the code
+6; ctrl + shift + ECS to open task manager
+7, ctrl ecs to open start
