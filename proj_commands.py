@@ -5,19 +5,30 @@ from proj_overlay import *
 import keyboard
 import mouse
 import time
-#Mouse strategy:    Get current screen dimension
-#                   Determine the locations of some buttons (e.g. windows, close, minimize)
-#                   Scale those locations to current screen
+#Dictionaries to store command-key (to be executed) and command-description pairs
+cmd_exec = {}
+cmd_desc = {}
 
 #Most defining function: show the grid with num_box boxes
-def show_grid(num_box):
+def drag(start_pos, end_pos):
+    mouse.press()
+    mouse.move(start_pos, end_pos)
+    mouse.release()
     return 0
 
-def drag(start_pos, end_pos):
+def stop(): #stop holding or moving mouse
     return 0
+
+def stop_called(): #help other functions to decide if program is stopped
+    return True
+
+def hold(held_key):
+    keyboard.press(held_key)
+    if stop_called():
+        keyboard.release(held_key)
 
 def left_click(position): #Either corners or a box on the grid
-    return 0
+    mouse.click()
 
 def scroll_down():
     return 0
