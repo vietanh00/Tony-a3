@@ -81,9 +81,12 @@ def button_hovered(my_butt):
 
 def gui_main():
     root = Tk()
-    root.geometry('400x150+%d+%d' % (screen_w(root) - 400, screen_h(root) - 250))
+    s_w = screen_w(root) * 0.31
+    s_h = screen_h(root) * 0.25
+    root.geometry('%dx%d+%d+%d' % (s_w, s_h, screen_w(root) - s_w, screen_h(root) - s_h * 2))
     root.title("Friendly Neighborhood Voice Assistant")
     root.configure(bg="#1e1e1e")    
+    root.resizable(width=False, height=True)
     #2) Main
     #2.1. Voice:  Recognize user speech and print it onto the application box
     #2.2. Text:   Allow user-submitted command into a query box    
