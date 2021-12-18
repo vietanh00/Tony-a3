@@ -118,6 +118,11 @@ body {
     width: 100%;
     position: relative 
 }
+.bg21_dark{
+    background-image: url(./dark-bg.png);
+    width: 100%;
+    position: relative 
+}
 
 .img_width2{
     width:50%;
@@ -133,9 +138,7 @@ body {
     position: absolute;
     top: 20%;
     left: 45%;
-    
     width: 45%;
-    
     background-color: rgba(0, 0, 0, 0.5);
     color: white; 
 }
@@ -165,6 +168,12 @@ body {
 
 .Background3{
     background-image: url(./white_background.png);
+    width: 100%;
+    position: relative;
+    height:80vh;
+}
+.bg3_dark{
+    background-image: url(./dark-bg.png);
     width: 100%;
     position: relative;
     height:80vh;
@@ -220,7 +229,11 @@ body {
 .Project_Idea_Part{
     padding:100px 205px;
     font-family: 'Titillium Web', sans-serif;
- 
+}
+.pip_dark{
+    padding:100px 205px;
+    font-family: 'Titillium Web', sans-serif;
+    background-color:#1f2532;
 }
 
 .Project_Idea_Part2{
@@ -242,6 +255,10 @@ body {
 .Main_Part_Text{
     font-size: 35px;
     color:#1f2532
+}
+.mpt_dark{
+    font-size: 35px;
+    color:white;
 }
 
 .Project_Overview{
@@ -268,16 +285,27 @@ body {
 }
 
 .Box1_1{
-background-color:#ffffff;
-border-color:#eeeeee;
-border-style:solid;
-border-width: 1px;
-color:#9a9a9a;
-line-height:22.4px;
-margin: 0px -1px -1px 0px;
-padding:50px 20px;
+    background-color:white;
+    border-color:#eeeeee;
+    border-style:solid;
+    border-width: 1px;
+    color:#9a9a9a;
+    line-height:22.4px;
+    margin: 0px -1px -1px 0px;
+    padding:50px 20px;
+    width:50%
+}
 
-width:50%
+.box11_dark{
+    background-color:#1f2532;
+    border-color:#eeeeee;
+    border-style:solid;
+    border-width: 1px;
+    color:#9a9a9a;
+    line-height:22.4px;
+    margin: 0px -1px -1px 0px;
+    padding:50px 20px;
+    width:50%
 }
 
 .TnT{
@@ -290,13 +318,11 @@ width:50%
 
 .Box1_1_T1{
     display: flex;
-
 }
 
 .Note1{
     margin-left: 20px;
     align-items: center;
-    
 }
 
 .MT1{
@@ -305,7 +331,12 @@ width:50%
     flex-direction: column;
     justify-content: space-between;
 }
-
+.MT1_dark{
+    color: white;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 .MT2{
     color: #1f2532;
 }
@@ -327,6 +358,12 @@ width:50%
     flex-direction: column;
     justify-content: space-between;
 }
+.MT4_dark{
+    color: #1f2532;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
 .Box1_2{
     background-color:#1f2532;
@@ -339,4 +376,30 @@ width:50%
     padding:50px 20px;
     
     width:50%
+}
+
+.mode_btn_1{ /*dark mode */
+    background-color: aqua;
+    color: black;
+    padding: 6px 10.5px;
+    border-radius: 4px;
+    border-color: #46b8da;
+    position: fixed;
+    bottom: 40px;
+    right: 10px;
     }
+    
+.mode_btn_2{ /*light mode */
+    background-color: aqua;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 4px;
+    border-color: #46b8da;
+    position: fixed;
+    bottom: 3px;
+    right: 10px;
+}
+
+.all_dark{
+    background-color:#1f2532
+}

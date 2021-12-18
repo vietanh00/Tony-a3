@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="web_scripts.js"> </script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     
-    <link rel="stylesheet" href="final1.css">
+    <link rel="stylesheet" href="index.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,6 +18,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&family=Titillium+Web:wght@600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div id="modes">
+        <button class="mode_btn_1" onclick="dark_mode()">Dark Mode</button>
+        <button class="mode_btn_2" onclick="light_mode()">Light Mode</button>
+    </div>
     <div id = "home"
      class="Background1">
         <div class="Header1">
@@ -37,7 +42,6 @@
             <div class="Project_Des">
                 <div class = "Title">Our project Idea</div>
                 <div class = "Description">Our group project is a voice command assistant. This voice command program stands out since it will allow users to enter their own commands. The program will be able to execute user-submitted queries, as long as users can describe or replicate such commands.</div>
-                <div class = "Button1">Click hear to see more</div>
             </div>
         </div>
     </div>
@@ -174,11 +178,11 @@
     </div>
 
     <div id = "projectidea"
-     class = "Project_Idea_Part">
+     class = "Project_Idea_Part"> 
         <div class = "Project_Overview">
             <div class="Project_Text">Project Idea Overview</div>
             <div class="Main_Part_Text">Main Description</div>
-            <div>Currently, voice commands only work on basic functions, such as calling or searching. Application-specific voice commands, such as for video games, or for simply scrolling websites on PC, are limited. This voice command program will start out with basic functions, such as dragging the cursor or double-clicking. However, users will be able to teach the program different commands, name different combinations of commands, and execute commands via voice or by plain-text.
+            <div class="MT1">Currently, voice commands only work on basic functions, such as calling or searching. Application-specific voice commands, such as for video games, or for simply scrolling websites on PC, are limited. This voice command program will start out with basic functions, such as dragging the cursor or double-clicking. However, users will be able to teach the program different commands, name different combinations of commands, and execute commands via voice or by plain-text.
         This voice assistants default name is Tony. However, users will be able to name this assistant, since this ensures that the assistants name is memorable to each user
             </div>
         </div>
@@ -196,7 +200,7 @@
 
                 <div class = "Box1_1">
                     <div class = "TnT">2. Program appearance to users</div>
-                    <div class = "MT2">Users should see a small box when launching the program. This application box allows users to quit the program manually, see and double check their commands (voice recognition may get muddled by ambient noises), or select different modes of the program (such as executing commands and recording macro).</div>
+                    <div class = "MT1">Users should see a small box when launching the program. This application box allows users to quit the program manually, see and double check their commands (voice recognition may get muddled by ambient noises), or select different modes of the program (such as executing commands and recording macro).</div>
                     </div>
             </div>
             
@@ -221,7 +225,7 @@
                         <div>- “Google/Youtube /query/”: allow searching for /query/ on popular websites.</div>
                         <div>- “Wiki /query/”: search for /query/ on Wikipedia, and read out loud the first sentence.</div>
                         <div>- “Search /query/”: launch a search for /query/ on Windows.</div>
-                        <div>- “Weather”: returns the current weather. Launch a search query on Google, then pronounce the search result.</div>
+                        <div>- “Weather”: returns the current weather from a weather API.</div>
 
                         </div>
                         </div>
