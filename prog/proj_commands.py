@@ -1,5 +1,6 @@
 #Default actions:   left click, drag, double click
 import proj_macro as pm
+import requests, json
 import keyboard, mouse
 import time, webbrowser
 import win32gui, win32con
@@ -11,6 +12,7 @@ def execute_commands(cmd):
     global cmd_exec, has_stopped
     if 'stop' in cmd:
         has_stopped = True
+    #'find' is better since it doesnt raise exceptions
     if cmd.find('drag') == 0: #sample: drag north 300
         cmd = cmd.split(" ") #cmd is now a list
         direction = cmd[1]
@@ -70,15 +72,17 @@ def execute_commands(cmd):
     elif cmd.find('say') == 0: #make Tony say stuff
         speech2 = cmd[4:]
         pronounce(speech2)
-    else: #no more basic commands
+    else: #no more basic commands. Search for stuff in the macros Pickle file
         if cmd in pm.cmd_exec:
             pm.replay_macro(cmd)
         else: #Tony doesnt know this command
             return 1
-            
-    return 0
+
+    #return 0
 
 def mouse_drag(direction, distance):
+    global has_stopped
+    has_stopped = False
     dist = int(distance)
     mouse.press()
     mouse_dir(direction, distance)
@@ -110,7 +114,7 @@ def right_click(repeat=1):
 
 def scroll(direction):
     global has_stopped
-    has_stopped = True
+    has_stopped = False
     if direction == 'down':
         while not stop_called():
             mouse.wheel(delta=-1)
@@ -170,7 +174,6 @@ def weather(city):
             #convert those floats to string to append them quicker
             lon = str(item["coord"]["lon"])
             lat = str(item["coord"]["lat"])
-            break
     airpol_url = "http://api.openweathermap.org/data/2.5/air_pollution?lat="+lat+"&lon="+lon+"&appid="+mkey
     weather_url = "http://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lon+"&appid="+mkey+"&units=metric"
     a_response = requests.get(airpol_url)
@@ -182,16 +185,16 @@ def weather(city):
     airqual = ['very good', 'good', 'alright', 'bad', 'very bad']
     result = ""
     result += "Weather condition of " + city + ": " + condition
-    result += ", temperature is " + temperature +" degrees"
+    result += ", temperature is " + str(temperature) +" degrees"
     result += ", air quality is " + airqual[aircode]
-    pronounce(result)
+    print(result)
 
 def ask_wiki(query):
-    return 0
+    print("hehe")
 
 def pronounce(speech):
     return 0
 
 def test():
-    execute_commands('mouse south 30')
+    execute_commands('wiki hehe')
 test()
