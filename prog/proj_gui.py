@@ -4,6 +4,8 @@
 from tkinter import *
 from tkinter import ttk
 from style import *
+cmd_text_entry = ""
+new_macro_name = ""
 #Create a small window for GUI
 #Widgets: Minimize, Close
 #Entries: Query box, enter button
@@ -22,6 +24,7 @@ def track_btn(some_button):
     global elementz
     while some_button not in elementz:
         elementz.append(some_button)
+
 def voice_mode(master):
     global elementz
     destroy_all()
@@ -32,19 +35,21 @@ def voice_mode(master):
     track_btn(voice_recognized)
     voice_desc.place(x=20, y = 50)
     voice_recognized.place(x=20, y = 100)
+
 def text_mode(master):
-    global elementz
+    global elementz, cmd_text_entry
     destroy_all()
     text_desc  = Label(master, text="Type your command(s) in the box below, separated by commas", 
         **main_app_text)
     text_desc.place(x=20, y=50)
-    text_entry = StringVar()
-    text_box   = Entry(master, textvariable=text_entry)
+    cmd_text_entry = StringVar()
+    text_box   = Entry(master, textvariable=cmd_text_entry)
     text_box.place(x=20, y=70, width=300)
     track_btn(text_desc)
     track_btn(text_box)
+
 def record_mode(master):
-    global elementz
+    global elementz, new_macro_name
     destroy_all()
     new_macro_name  = StringVar()
     macro_des       = Label(master, text="Click below to start recording a new macro.")
