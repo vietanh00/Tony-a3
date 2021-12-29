@@ -1,5 +1,7 @@
 #Launch the GUI and necessary codes
-from prog import proj_parsevoice as pv
+import proj_parsevoice as tony
+import proj_commands as pc
+import proj_macro as pm
 import subprocess
 
 #functions for the gui buttons

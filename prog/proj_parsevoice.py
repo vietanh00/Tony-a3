@@ -1,5 +1,5 @@
 import speech_recognition as sr
-
+import proj_commands as pc
 def tony():
     print("Please speak with clear pauses in place of spaces!")
     listener = sr.Recognizer()
@@ -13,15 +13,18 @@ def tony():
                 print(">>VOICE: "+ cmd)
                 cmd = cmd.lower()
                 if 'off' in cmd:
+                    print("Tony is shutting down")
+                    return 1
                     break
                 if 'tony' in cmd:
                     tony_index = cmd.index('tony')
-                    instruction = cmd[tony_index:] #pass the rest of the cmd to be executed
-                
+                    instruction = cmd[(tony_index + 5):] #pass the rest of the cmd to be executed
+                    pc.execute_commands(instruction)
         except sr.UnknownValueError:  #Unintelligible noises - coughing, sneezing, etc. or no noise at all
             print("ERROR: No voice, or voice cannot be transcribed")
-        except: #generic errors
-            print("I dont know what to do")
+        except Exception as e: #generic errors
+            print(e)
+            print("I'm sorry")
     return 0
 
 tony()

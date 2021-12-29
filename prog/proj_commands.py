@@ -1,42 +1,41 @@
 #Default actions:   left click, drag, double click
-from proj_overlay import *
-from proj_macro import *
+import proj_macro as pm
 import keyboard, mouse
 import time, webbrowser
 import win32gui, win32con
 
-has_stopped = False
-win_maxed = False #return if current window is maximized
+has_stopped = False     #return if user has called 'stop'
+win_maxed = False       #return if current window is maximized
 
 def execute_commands(cmd):
     global cmd_exec, has_stopped
     if 'stop' in cmd:
         has_stopped = True
-    if cmd.index('drag') == 0: #sample: drag north 300
+    if cmd.find('drag') == 0: #sample: drag north 300
         cmd = cmd.split(" ") #cmd is now a list
         direction = cmd[1]
         distance = cmd[2]
         mouse_drag(direction, distance)
-    elif cmd.index('mouse') == 0: #sample: mouse east 200
+    elif cmd.find('mouse') == 0: #sample: mouse east 200
         cmd = cmd.split(" ") #cmd is now a list
         direction = cmd[1]
         distance = cmd[2]
         mouse_dir(direction, distance)
-    elif cmd.index('left click') == 0: #'left click' or 'left click 4' (4 times)
+    elif cmd.find('left-click') == 0: #'left click' or 'left click 4' (4 times)
         cmd= cmd.split(" ")
         if len(cmd) > 2:
             repeat = cmd[2]
         else:
             repeat = 1
         left_click(repeat)
-    elif cmd.index('right click') == 0: #niche case of repeated right click
+    elif cmd.find('right-click') == 0: #niche case of repeated right click
         cmd= cmd.split(" ")
         if len(cmd) > 2:
             repeat = cmd[2]
         else:
             repeat = 1
         left_click(repeat)
-    elif cmd.index('scroll') == 0: #scroll up/down until 'stop'
+    elif cmd.find('scroll') == 0: #scroll up/down until 'stop'
         cmd = cmd.split(" ")
         if cmd[1] == 'up':
             scroll('up')
@@ -50,30 +49,33 @@ def execute_commands(cmd):
         cmd = cmd.split(' ')
         query = cmd[1]
         search(query)
-    elif cmd.index('hold') == 0:
+    elif cmd.find('hold') == 0:
         cmd = cmd.split(' ')
         some_key = cmd[1]
         hold(some_key)
-    elif cmd.index('combine') == 0:
+    elif cmd.find('combine') == 0:
         cmd = cmd.split(' ')
         key1 = cmd[1]
         key2 = cmd[2]
         combine(key1, key2)
-    elif cmd.index('wiki') == 0:
+    elif cmd.find('type') == 0:
+        speech1 = cmd[5:]
+        type_keys(speech1)
+    elif cmd.find('wiki') == 0:
         query = cmd[5:]
         ask_wiki(query)
-    elif cmd.index('weather') == 0:
+    elif cmd.find('weather') == 0:
         city = cmd[8:]
         weather(city)
-    elif cmd.index('say') == 0: #make Tony say stuff
-        speech = cmd[4:]
-        pronounce(speech)
+    elif cmd.find('say') == 0: #make Tony say stuff
+        speech2 = cmd[4:]
+        pronounce(speech2)
     else: #no more basic commands
-        if cmd in cmd_exec:
-            replay_macro(cmd)
+        if cmd in pm.cmd_exec:
+            pm.replay_macro(cmd)
         else: #Tony doesnt know this command
             return 1
-
+            
     return 0
 
 def mouse_drag(direction, distance):
@@ -107,6 +109,8 @@ def right_click(repeat=1):
         mouse.right_click()
 
 def scroll(direction):
+    global has_stopped
+    has_stopped = True
     if direction == 'down':
         while not stop_called():
             mouse.wheel(delta=-1)
@@ -136,18 +140,22 @@ def minimize():
 
 def search(query): #Opens the default browser and search for query on google
     webbrowser.get().open('http://www.google.com')
-    time.sleep(2)
+    time.sleep(2) #sleep time may depend on computer/connection
     keyboard.write(query)
     keyboard.press_and_release('enter')
     return 0
 
 def hold(held_key):
+    global has_stopped
     keyboard.press(held_key)
     if stop_called():
         keyboard.release(held_key)
 
 def combine(key1, key2):
     keyboard.press_and_release(key1 +'+'+ key2)
+
+def type_keys(speech):
+    keyboard.write(speech)
 
 #Below are actions that would trigger a voiced response
 #Get weather condition, temperature, and air pollution level of some city
@@ -174,8 +182,8 @@ def weather(city):
     airqual = ['very good', 'good', 'alright', 'bad', 'very bad']
     result = ""
     result += "Weather condition of " + city + ": " + condition
-    result += "Temperature is " + temperature
-    result += "Air quality is " + airqual[aircode]
+    result += ", temperature is " + temperature +" degrees"
+    result += ", air quality is " + airqual[aircode]
     pronounce(result)
 
 def ask_wiki(query):
@@ -183,3 +191,7 @@ def ask_wiki(query):
 
 def pronounce(speech):
     return 0
+
+def test():
+    execute_commands('mouse south 30')
+test()
