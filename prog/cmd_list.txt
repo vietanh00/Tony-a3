@@ -1,11 +1,16 @@
-@@ This file is created for team members to suggest commands.
-@@ Each line contains: index, command name, key combination, description (if needed)
-@@ Each element is separated by semi-colon (;)
-1; youtube next; shift-n; play the next video when on youtube
-2; youtube previous; shift-p; play the previous video when on youtube
-3; file explorer; windows-e; launch the windows file explorer
-4; close window; alt-f4; close the current window
-
-5; ctrl c to copy the code, and ctr p to paste the code
-6; ctrl + shift + ECS to open task manager
-7, ctrl ecs to open start
+@@ All basic commands included in the bot
+@@ Voice commands should be called after saying 'tony'
+Mouse:
+    1) 'mouse north/south/east/west <dist>' : move mouse up/down/right/left <dist>
+    2) 'scroll up/down <repeat>' : scroll up/down <repeat> times
+    3) 'drag north/south/east/west <dist>' : drag (hold mouse down)
+    4) 'left/right click <repeat>' : left/right click <repeat> times (default is 1)
+Keyboard:
+    5) 'press <key>' : press a single key
+    6) 'type <text>': type <text> even if impossible
+    7) 'combine <keys>' : press all <keys> in combination
+Misc:
+    8) 'web <site>': launch <site> on the default browser. No 'www' please.
+        e.g. web youtube.com    
+    9) 'minimize/maximize' : minimize/maximize the current window (only for windows)
+    10)'search <query>' : search for <query> on Google. Depends on connection.
