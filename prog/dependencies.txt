@@ -1,8 +1,8 @@
-The following libraries and packages are required. Please run 'pip install <library>' to get them.
+The following libraries and packages are required. Please run 'pip install <library>' to get them!
     dill
-    win32gui
-    tkinter
+    pywin32
+    tk
     keyboard
     mouse
     requests
-    speech_recognition
+    speechrecognition

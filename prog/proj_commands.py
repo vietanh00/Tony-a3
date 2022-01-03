@@ -9,7 +9,7 @@ import win32gui, win32con
     subprocess.run(["pip", "install", "requests"])
     subprocess.run(["pip", "install", "keyboard"])
     subprocess.run(["pip", "install", "mouse"])
-    subprocess.run(["pip", "install", "win32gui"])
+    subprocess.run(["pip", "install", "pywin32"])
     time.sleep(10)
     import requests
     import keyboard, mouse
