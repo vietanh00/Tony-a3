@@ -112,6 +112,8 @@ def button_hovered(my_butt):
     my_butt.bind("<Leave>", on_leave)
 
 #def gui_main():
+title_photo = PhotoImage(file = "bot.png")
+root.iconphoto(False, title_photo)
 s_w = screen_w(root) * 0.31
 s_h = screen_h(root) * 0.25
 #print(f"Tracking screen dimension: %d %d" % (screen_h(root),screen_w(root))) #just for debug

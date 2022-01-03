@@ -9,7 +9,7 @@ import threading, time
 
 #Macro names will be verbally called! Make them as clear as possible!
 #Sample entry: { 'youtube next': [[mouse events], [keyboard events]] }
-filename = str(pathlib.Path().resolve()) +'\prog\macros_exec.pickle'
+filename = str(pathlib.Path().resolve()) +'\macros_exec.pickle'
 all_macros = []
 def record_some_macro(name):
     global filename
