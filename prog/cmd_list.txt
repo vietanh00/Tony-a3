@@ -1,5 +1,6 @@
 @@ All basic commands included in the bot
 @@ Voice commands should be called after saying 'tony'
+@@ 'off' anywhere in the voice command (no 'tony' needed) will turn the bot off
 Mouse:
     1) 'mouse north/south/east/west <dist>' : move mouse up/down/right/left <dist>
     2) 'scroll up/down <repeat>' : scroll up/down <repeat> times

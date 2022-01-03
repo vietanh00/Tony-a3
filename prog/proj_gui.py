@@ -34,7 +34,12 @@ def track_btn(some_button):
     global elementz
     while some_button not in elementz:
         elementz.append(some_button)
-
+def clear_macros():
+    filename = pm.filename
+    empty_list = [2]
+    empty_list.clear()
+    with open(filename, 'wb') as f:
+        dill.dump(empty_list, f)
 def gui_run(string_of_cmd): #execute a comma-separated string of cmd
     list_of_cmd = string_of_cmd.split(',')
     for i in range(0, len(list_of_cmd)):
@@ -84,10 +89,13 @@ def allrecorded_mode(master):
     desc_allrecorded = Label(master, text="Below are your submitted macros.", 
         **main_app_text)
     desc_allrecorded.place(x=20, y=40)
+    del_macros = Button(master, text="Delete all macros", command=lambda:clear_macros())
+    del_macros.place(x = 20, y =60)
     mac_label = Label(master, text=all_macs, **main_app_text)
-    mac_label.place(x=20, y = 70)
+    mac_label.place(x=20, y = 100)
     track_btn(desc_allrecorded)
     track_btn(mac_label)
+    track_btn(del_macros)
 def about_mode(master):
     global elementz
     destroy_all()
@@ -108,12 +116,12 @@ s_w = screen_w(root) * 0.31
 s_h = screen_h(root) * 0.25
 #print(f"Tracking screen dimension: %d %d" % (screen_h(root),screen_w(root))) #just for debug
 root.geometry('%dx%d+%d+%d' % (s_w, s_h, screen_w(root) - s_w, screen_h(root) - s_h * 2))
-root.title("Tony: Voice Assistant")
+root.title("Tony: Silent Mode")
 root.configure(bg="#1e1e1e")    
 root.resizable(width=False, height=True)
-lbl_name_change = Label(root, text="You may call him Tony, or change his name.", **main_app_text)
-lbl_name_change.place(x=25, y=40)
-track_btn(lbl_name_change)
+#lbl_name_change = Label(root, text="You may call him Tony, or change his name.", **main_app_text)
+#lbl_name_change.place(x=25, y=40)
+#track_btn(lbl_name_change)
 welcome = Label(root, text="Click a button above to start commanding your bot!", **main_app_text)
 welcome.place(x=25, y=70)
 track_btn(welcome)
@@ -135,5 +143,3 @@ for i in range(0, len(top_buttons)):
     button_hovered(top_buttons[i])
 root.mainloop()
 #return 0
-
-#gui_main()
