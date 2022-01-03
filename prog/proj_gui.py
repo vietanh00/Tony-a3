@@ -1,7 +1,7 @@
 #Small GUI with widgets
 #This is to allow user to manually close program or type commands
 #It is also reassuring to see the program on screen
-import subprocess, dill
+import subprocess, dill, pathlib
 #try:
 from tkinter import *
 from tkinter import ttk
@@ -85,6 +85,8 @@ def allrecorded_mode(master):
             all_macs += macro_obj[0] + "\n"
         except EOFError:
             break
+        except: #generic errors
+            pass
     f.close()
     desc_allrecorded = Label(master, text="Below are your submitted macros.", 
         **main_app_text)
@@ -112,8 +114,8 @@ def button_hovered(my_butt):
     my_butt.bind("<Leave>", on_leave)
 
 #def gui_main():
-title_photo = PhotoImage(file = "bot.png")
-root.iconphoto(False, title_photo)
+#title_photo = PhotoImage(file = str(pathlib.Path().resolve()) +"\\Untitled.png")
+#root.iconphoto(False, title_photo)
 s_w = screen_w(root) * 0.31
 s_h = screen_h(root) * 0.25
 #print(f"Tracking screen dimension: %d %d" % (screen_h(root),screen_w(root))) #just for debug
