@@ -1,5 +1,6 @@
 #Default actions:   left click, drag, double click
 import proj_macro as pm
+import win32com.client
 import subprocess, time, webbrowser, json
 #try:
 import requests
@@ -91,15 +92,10 @@ def execute_commands(cmd):
         cmd = cmd.split(" ")
         site = cmd[1]
         web(site)
-    elif cmd.find('wiki') == 0:
-        query = cmd[5:]
-        ask_wiki(query)
-    elif cmd.find('weather') == 0:
-        city = cmd[8:]
-        weather(city)
-    elif cmd.find('say') == 0: #make Tony say stuff
-        speech2 = cmd[4:]
-        pronounce(speech2)
+    elif cmd.find('volume') == 0: #change SYSTEM volume. 'volume up/down/mute'
+        cmd = cmd.split(' ')
+        direction=cmd[1]
+        volume(direction)
     else: #no more basic commands. Search for stuff in the macros Pickle file
         err_code = pm.replay_macro(cmd)
         if err_code == 1:
@@ -208,40 +204,19 @@ def web(site):
 
 def search(query): #Opens the default browser and search for query on google
     webbrowser.get().open('http://www.google.com')
-    time.sleep(2) #sleep time may depend on computer/connection
+    time.sleep(3) #sleep time may depend on computer/connection
     keyboard.write(query)
     keyboard.press_and_release('enter')
     return 0
 
-#Below are actions that would trigger a voiced response
-#Get weather condition, temperature, and air pollution level of some city
-def weather(city):
-    mkey = "b574c25bd6eb7f7802f69cd724e5308a"
-    lat = ""
-    lon = ""
-    with open ("./city.list.json", encoding="utf-8") as f:
-        data = json.load(f) #data will be a dict
-    for item in data:
-        if item["name"].lower() == city.lower():
-            #convert those floats to string to append them quicker
-            lon = str(item["coord"]["lon"])
-            lat = str(item["coord"]["lat"])
-    airpol_url = "http://api.openweathermap.org/data/2.5/air_pollution?lat="+lat+"&lon="+lon+"&appid="+mkey
-    weather_url = "http://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lon+"&appid="+mkey+"&units=metric"
-    a_response = requests.get(airpol_url)
-    w_response = requests.get(weather_url)
-    #parse responses
-    condition = w_response.json()["weather"][0]["main"].lower()
-    temperature = int (w_response.json()["main"]["temp"]) #wrap just in case
-    aircode = int (a_response.json()["list"][0]["main"]["aqi"]) #wrap just in case
-    airqual = ['very good', 'good', 'alright', 'bad', 'very bad']
-    result = ""
-    result += "Weather condition of " + city + ": " + condition
-    result += ", temperature is " + str(temperature) +" degrees"
-    result += ", air quality is " + airqual[aircode]
-    print(result)
-
-def pronounce(speech):
+def volume(direction): #up, down, mute
+    shell = win32com.client.Dispatch("WScript.Shell")
+    if direction == 'up':
+        shell.SendKeys(chr(175), 0)
+    elif direction == 'down':
+        shell.SendKeys(chr(174), 0)
+    else: #mute
+        shell.SendKeys(chr(173), 0)
     return 0
 
 def test():
