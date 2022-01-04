@@ -24,79 +24,82 @@ def execute_commands(cmd):
     global has_stopped
     if 'stop' in cmd:
         stop()
-    #'find' is better than 'index' since it doesnt raise exceptions
-    if cmd.find('drag') == 0: #sample: drag north 300
-        cmd = cmd.split(" ") #cmd is now a list
-        direction = cmd[1]
-        distance = cmd[2]
-        mouse_drag(direction, distance)
-    elif cmd.find('mouse') == 0: #sample: mouse east 200
-        cmd = cmd.split(" ") #cmd is now a list
-        direction = cmd[1]
-        distance = cmd[2]
-        mouse_dir(direction, distance)
-    elif cmd.find('left-click') == 0: #'left click' or 'left click 4' (4 times)
-        cmd= cmd.split(" ")
-        if len(cmd) > 2:
+    try:
+        #'find' is better than 'index' since it doesnt raise exceptions
+        if cmd.find('drag') == 0: #sample: drag north 300
+            cmd = cmd.split(" ") #cmd is now a list
+            direction = cmd[1]
+            distance = cmd[2]
+            mouse_drag(direction, distance)
+        elif cmd.find('mouse') == 0: #sample: mouse east 200
+            cmd = cmd.split(" ") #cmd is now a list
+            direction = cmd[1]
+            distance = cmd[2]
+            mouse_dir(direction, distance)
+        elif cmd.find('left-click') == 0: #'left click' or 'left click 4' (4 times)
+            cmd= cmd.split(" ")
+            if len(cmd) > 2:
+                repeat = cmd[2]
+            else:
+                repeat = 1
+            left_click(repeat)
+        elif cmd.find('right-click') == 0: #niche case of repeated right click
+            cmd= cmd.split(" ")
+            if len(cmd) > 2:
+                repeat = cmd[2]
+            else:
+                repeat = 1
+            left_click(repeat)
+        elif cmd.find('scroll') == 0: #'scroll up/down 4' (4 times)
+            cmd = cmd.split(" ")
             repeat = cmd[2]
-        else:
-            repeat = 1
-        left_click(repeat)
-    elif cmd.find('right-click') == 0: #niche case of repeated right click
-        cmd= cmd.split(" ")
-        if len(cmd) > 2:
-            repeat = cmd[2]
-        else:
-            repeat = 1
-        left_click(repeat)
-    elif cmd.find('scroll') == 0: #'scroll up/down 4' (4 times)
-        cmd = cmd.split(" ")
-        repeat = cmd[2]
-        if cmd[1] == 'up':
-            scroll('up', repeat)
-        else:
-            scroll('down', repeat)
-    elif 'maximize' in cmd: #maximize a window, or 'normalize' it
-        maximize()
-    elif 'minimize' in cmd: #minimize a window
-        minimize()
-    elif 'search' in cmd:
-        cmd = cmd.split(' ')
-        query = cmd[1]
-        search(query)
-    elif cmd.find('press') == 0:
-        cmd = cmd.split(' ')
-        some_key = cmd[1]
-        press(some_key)
-    elif cmd.find('combine') == 0:
-        cmd = cmd.split(' ')
-        key1 = cmd[1]
-        if key1 == 'alt-tab':
-            key1 = 'alt'
-            key2 = 'tab'
-        else:
-            key2 = cmd[2]
-        combine(key1, key2)
-    elif cmd.find('type') == 0:
-        speech1 = cmd[5:]
-        type_keys(speech1)
-    elif cmd.find('web') == 0: #'web youtube.com' -> launch browser, no www please
-        cmd = cmd.split(" ")
-        site = cmd[1]
-        web(site)
-    elif cmd.find('wiki') == 0:
-        query = cmd[5:]
-        ask_wiki(query)
-    elif cmd.find('weather') == 0:
-        city = cmd[8:]
-        weather(city)
-    elif cmd.find('say') == 0: #make Tony say stuff
-        speech2 = cmd[4:]
-        pronounce(speech2)
-    else: #no more basic commands. Search for stuff in the macros Pickle file
-        err_code = pm.replay_macro(cmd)
-        if err_code == 1:
-            print("macro not registered, or poorly pronounced")
+            if cmd[1] == 'up':
+                scroll('up', repeat)
+            else:
+                scroll('down', repeat)
+        elif 'maximize' in cmd: #maximize a window, or 'normalize' it
+            maximize()
+        elif 'minimize' in cmd: #minimize a window
+            minimize()
+        elif 'search' in cmd:
+            cmd = cmd.split(' ')
+            query = cmd[1]
+            search(query)
+        elif cmd.find('press') == 0:
+            cmd = cmd.split(' ')
+            some_key = cmd[1]
+            press(some_key)
+        elif cmd.find('combine') == 0:
+            cmd = cmd.split(' ')
+            key1 = cmd[1]
+            if key1 == 'alt-tab':
+                key1 = 'alt'
+                key2 = 'tab'
+            else:
+                key2 = cmd[2]
+            combine(key1, key2)
+        elif cmd.find('type') == 0:
+            speech1 = cmd[5:]
+            type_keys(speech1)
+        elif cmd.find('web') == 0: #'web youtube.com' -> launch browser, no www please
+            cmd = cmd.split(" ")
+            site = cmd[1]
+            web(site)
+        elif cmd.find('wiki') == 0:
+            query = cmd[5:]
+            ask_wiki(query)
+        elif cmd.find('weather') == 0:
+            city = cmd[8:]
+            weather(city)
+        elif cmd.find('say') == 0: #make Tony say stuff
+            speech2 = cmd[4:]
+            pronounce(speech2)
+        else: #no more basic commands. Search for stuff in the macros Pickle file
+            err_code = pm.replay_macro(cmd)
+            if err_code == 1:
+                print("macro not registered, or poorly pronounced")
+    except:
+        pass
 
     return 0
 
