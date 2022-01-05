@@ -215,7 +215,7 @@ def volume(direction): #up, down, mute
         shell.SendKeys(chr(175), 0)
     elif direction == 'down':
         shell.SendKeys(chr(174), 0)
-    else: #mute
+    elif direction =='mute': #mute
         shell.SendKeys(chr(173), 0)
     return 0
 
