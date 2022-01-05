@@ -7,7 +7,7 @@ import threading, time
 #Dictionaries to store command-key (to be executed) and command-description pairs
 #Only user-recorded macros are in here. Default commands not included.
 
-#Macro names will be verbally called! Make them as clear as possible!
+#Macro names can be verbally called! Make them as clear as possible! No dashes and stuff.
 #Sample entry: { 'youtube next': [[mouse events], [keyboard events]] }
 filename = str(pathlib.Path().resolve()) +'\macros_exec.pickle'
 all_macros = []

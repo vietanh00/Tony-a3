@@ -220,6 +220,6 @@ def volume(direction): #up, down, mute
     return 0
 
 def test():
-    execute_commands('wiki hehe')
+    execute_commands('volume down')
 
 #test()

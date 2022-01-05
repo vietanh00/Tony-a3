@@ -114,8 +114,9 @@ def button_hovered(my_butt):
     my_butt.bind("<Leave>", on_leave)
 
 #def gui_main():
-#title_photo = PhotoImage(file = str(pathlib.Path().resolve()) +"\\Untitled.png")
-#root.iconphoto(False, title_photo)
+img_path = str(pathlib.Path().resolve()) +"\\title_icon.png"
+title_photo = PhotoImage(file = img_path)
+root.iconphoto(False, title_photo)
 s_w = screen_w(root) * 0.31
 s_h = screen_h(root) * 0.25
 #print(f"Tracking screen dimension: %d %d" % (screen_h(root),screen_w(root))) #just for debug
@@ -123,9 +124,6 @@ root.geometry('%dx%d+%d+%d' % (s_w, s_h, screen_w(root) - s_w, screen_h(root) - 
 root.title("Tony: Silent Mode")
 root.configure(bg="#1e1e1e")    
 root.resizable(width=False, height=True)
-#lbl_name_change = Label(root, text="You may call him Tony, or change his name.", **main_app_text)
-#lbl_name_change.place(x=25, y=40)
-#track_btn(lbl_name_change)
 welcome = Label(root, text="Click a button above to start commanding your bot!", **main_app_text)
 welcome.place(x=25, y=70)
 track_btn(welcome)
