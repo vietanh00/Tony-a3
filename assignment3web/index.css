@@ -1,0 +1,302 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    
+}
+
+.Header1{
+    Background-color: white;
+    padding: 30px 200px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.Text1 {
+    display: flex;
+    Color: White;
+    text-align: center; 
+    justify-content: space-between;
+    width: 56%;
+}
+
+.Text1 a{
+    text-decoration: none;
+    color:black;
+    font-family: 'Lato', sans-serif;
+    font-family: 'Oswald', sans-serif;
+    
+}
+
+.Project_Content{
+    Background-color: white;
+    padding: 160px 190px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Project_Image img{
+    width: 95%
+}
+
+.Project_Des{
+    color: black;
+    width: 95%;
+    margin-right: 25px;
+
+}
+
+.Title{
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 48px;
+    
+}
+
+.Description{
+    color:#707d8f;
+    font-size: 15px;
+    margin-top:20px;
+}
+
+.Button1{
+    background-color: lightblue;
+   
+    box-sizing: border-box;
+    padding: 16px 24px;
+    color: white;
+    width: 30%;
+    font-size: 13px;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius:5px;
+    
+    font-family: 'Titillium Web', sans-serif;
+    text-align: center;
+
+}
+
+
+/* Plan and Progress */
+
+.Project_Idea_Part{
+    padding:0px 205px;
+    font-family: 'Titillium Web', sans-serif;
+ 
+}
+
+.Project_Idea_Part2{
+    padding:100px 205px;
+    font-family: 'Titillium Web', sans-serif;
+    background-color:#1f2532 ;
+}
+
+.Project_Overview{
+    align-items: center;
+    text-align: center;
+}
+
+.Project_Text{
+    font-size: 10px;
+    color: #1f2532;
+}
+
+.Main_Part_Text{
+    font-size: 35px;
+    color:#1f2532
+}
+
+.Box1_1{
+    background-color:#ffffff;
+    border-color:#eeeeee;
+    border-style:solid;
+    border-width: 1px;
+    color:black;
+    line-height:22.4px;
+    margin: 0px -1px -1px 0px;
+    padding:50px 20px;
+    
+    width:50%
+    }
+
+.Project_Maincontent{
+    display: flex;    
+    }
+
+.TnT{
+    color: blue
+}
+
+
+/* Tool and Technology */
+.Hardware{
+    padding: 100px 175px 15px 175px
+}
+
+
+.Hardware{
+    display: flex;
+    justify-content: space-between;
+}
+
+.HardwareText{
+    font-family: 'Lato', sans-serif;
+    font-family: 'Oswald', sans-serif;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 24px;
+    color: #1f2532;
+    margin-bottom: 5px;
+}
+
+.ToolText{
+    margin-left: 30px;
+    padding:20px 0px
+}
+
+.HardwareText2{
+    font-size: 14px;
+    font-family: 'Lato', sans-serif;
+    font-family: 'Oswald', sans-serif;
+    font-family: 'Titillium Web', sans-serif;
+
+}
+
+.Hardware2{
+    padding: 20px 175px
+}
+
+
+.Hardware2{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Member */
+
+.Project_Idea_Part{
+    padding:100px 205px;
+    font-family: 'Titillium Web', sans-serif;
+ 
+}
+
+.Project_Idea_Part2{
+    padding:100px 205px;
+    font-family: 'Titillium Web', sans-serif;
+    background-color:white ;
+}
+
+.Project_Overview{
+    align-items: center;
+    text-align: center;
+}
+
+.Project_Text{
+    font-size: 10px;
+    color: #1f2532;
+}
+
+.Main_Part_Text{
+    font-size: 35px;
+    color:#1f2532
+}
+
+.Project_Overview{
+    align-items: center;
+    text-align: center;
+}
+
+.Project_Text2{
+    font-size: 10px;
+    color: black;
+}
+
+.Main_Part_Text2{
+    font-size: 35px;
+    color:black
+}
+
+.Main_Part_Text2_1{
+    color: black;
+}
+
+.Project_Maincontent{
+    display: flex;
+}
+
+.Box1_1{
+background-color:#ffffff;
+border-color:#eeeeee;
+border-style:solid;
+border-width: 1px;
+color:#9a9a9a;
+line-height:22.4px;
+margin: 0px -1px -1px 0px;
+padding:50px 20px;
+
+width:50%
+}
+
+.TnT{
+    font-family: 'Great Vibes', cursive;
+    color: red;
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom:5px
+}
+
+.Box1_1_T1{
+    display: flex;
+
+}
+
+.Note1{
+    margin-left: 20px;
+    align-items: center;
+    
+}
+
+.MT1{
+    color: #1f2532;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.MT2{
+    color: #1f2532;
+}
+
+.ImgP img{
+    width: 100%;
+    align-items: center;
+    text-align: center;
+}
+
+.MT3{
+    color: #1f2532;
+    margin-top: 45%;
+}
+
+.MT4{
+    color: black;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.Box1_2{
+    background-color:white;
+    border-color:burlywood;
+    border-style:solid;
+    border-width: 1px;
+    color:#9a9a9a;
+    line-height:22.4px;
+    margin: 0px -1px -1px 0px;
+    padding:50px 20px;
+    
+    width:50%
+    }
