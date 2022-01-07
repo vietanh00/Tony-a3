@@ -114,7 +114,7 @@ def button_hovered(my_butt):
     my_butt.bind("<Leave>", on_leave)
 
 #def gui_main():
-img_path = str(pathlib.Path().resolve()) +"\\title_icon.png"
+img_path = str(pathlib.Path().resolve()) +"\\title_icon robot.png"
 title_photo = PhotoImage(file = img_path)
 root.iconphoto(False, title_photo)
 s_w = screen_w(root) * 0.31

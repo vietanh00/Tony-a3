@@ -6,4 +6,4 @@ The following libraries and packages are required. Please run 'pip install <libr
     mouse
     requests
     speechrecognition
-    pyaudio
+    pyaudio -- cannot be installed with pip

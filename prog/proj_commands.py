@@ -16,7 +16,8 @@ import win32gui, win32con
     import keyboard, mouse
     import win32gui, win32con"""
 
-
+voices  = ['one', 'two', 'to', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'zero']
+v_ints    = [1, 2, 2, 3, 4, 5, 6, 7, 8, 9, 0]
 
 has_stopped = False     #return if user has called 'stop'
 win_maxed = False       #return if current window is maximized
@@ -77,13 +78,15 @@ def execute_commands(cmd):
         if key1 == 'alt-tab': #only alt-tab has this issue
             key1 = 'alt'
             key2 = 'tab'
+            combine(key1, key2)
         else:
             key2 = cmd[2]
             if length > 3:
                 key3 = cmd[3]
                 combine(key1, key2, key3)
             else:
-                key2 = cmd[2]
+                if key2 == 'and' or key2 == 'end':
+                    key2 = 'n'
                 combine(key1, key2)
     elif cmd.find('type') == 0:
         speech1 = cmd[5:]
@@ -104,15 +107,6 @@ def execute_commands(cmd):
     #    pass
 
     return 0
-
-#the bot will recognize twenty-two as 22, but not three as 3
-#even worse, two/2/to is all jumbled up
-def voice_int(num_voice):
-    voices  = ['one', 'two', 'to', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'zero']
-    ints    = [1, 2, 2, 3, 4, 5, 6, 7, 8, 9, 0]
-    for i in range (0, len(voices)):
-        if num_voice == voices[i]:
-            return ints[i]
 
 def is_maxed():
     global win_maxed
@@ -152,8 +146,11 @@ def right_click(repeat=1):
         mouse.right_click()
 
 def scroll(direction, repeat):
-    global has_stopped
+    global has_stopped, voices
     has_stopped = False
+    if repeat in voices:
+        r_int = v_ints[voices.index(repeat)]
+        repeat = r_int
     if direction == 'down':
         for i in range(0, repeat):
             mouse.wheel(delta=-1)
@@ -187,6 +184,8 @@ def press(some_key):
     keyboard.press_and_release(some_key)
 
 def combine(key1, key2, key3=''):
+    #if key2 == 'and' or key2 == 'end':
+    #    key2 == 'n'
     if key3 == '':
         keyboard.press_and_release(key1 +'+'+ key2)
     else: 

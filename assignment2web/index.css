@@ -1,0 +1,405 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    
+}
+
+.Header1{
+    Background-color: #1f2532;
+    padding: 30px 200px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.Text1 {
+    display: flex;
+    Color: White;
+    text-align: center; 
+    justify-content: space-between;
+    width: 50%;
+}
+
+.Text1 a{
+    text-decoration: none;
+    color:white;
+}
+
+.Project_Content{
+    Background-color: #1f2532;
+    padding: 120px 190px;
+    display: flex;
+    
+}
+
+.Project_Image img{
+    width: 95%
+}
+
+.Project_Des{
+    color: white;
+    width: 95%;
+    margin-top: 50px;
+}
+
+.Title{
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 48px;
+    
+}
+
+.Description{
+    color:#707d8f;
+    font-size: 15px;
+    margin-top:20px;
+}
+
+.Button1{
+    background-color:#F52E22;
+   
+    box-sizing: border-box;
+    padding: 16px 24px;
+    color: white;
+    width: 30%;
+    font-size: 13px;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius:5px;
+    
+    font-family: 'Titillium Web', sans-serif;
+    text-align: center;
+
+}
+
+.Project_Content1{
+    Background-color: #1f2532;
+    padding: 30px 190px;
+    display: flex;
+    
+}
+
+.Interview{
+    Background-color: #1f2532;
+    color: lightskyblue;
+    text-align: center;
+    font-size: 40px;
+
+    font-family: 'Oswald', sans-serif;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+.Description1_0{
+    color:#707d8f;
+    font-size: 15px;
+}
+
+.Description1{
+    color:white;
+    font-size: bold;
+    font-size: 15px;
+    margin-top:20px;
+}
+
+.Project_Des1{
+    color: white;
+    width: 50%;
+    
+}
+
+/*interview part*/
+
+.Background2_1{
+    background-image: url(./white_background.png);
+    width: 100%;
+    position: relative 
+}
+.bg21_dark{
+    background-image: url(./dark-bg.png);
+    width: 100%;
+    position: relative 
+}
+
+.img_width2{
+    width:50%;
+}
+
+.img2{
+    width: 100%; 
+    height: 100vh; 
+    object-fit: coverstyle = "color: white";
+}
+
+.background_maincontent2{
+    position: absolute;
+    top: 20%;
+    left: 45%;
+    width: 45%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white; 
+}
+
+.adjust_maincontent2{
+    padding: 50px;
+}
+
+.main_text2_line1{
+    font-family: 'Great Vibes', cursive;
+    font-size: 50px;
+    color: #c49b63;
+    margin-bottom: 0px;
+}
+
+.main_text2_line2{
+    font-size:40px; 
+    font-weight:bold;
+}
+
+.main_text2_line3{
+    font-size: 15px;
+    margin-top: 16px;
+    font-family: 'Great Vibes', cursive;
+    font-family: 'Poppins', sans-serif;
+}
+
+.Background3{
+    background-image: url(./white_background.png);
+    width: 100%;
+    position: relative;
+    height:80vh;
+}
+.bg3_dark{
+    background-image: url(./dark-bg.png);
+    width: 100%;
+    position: relative;
+    height:80vh;
+}
+
+.img_width3{
+    width:50%; 
+    float: right;
+}
+
+.img3{
+    width: 100%; 
+    height: 80vh; 
+    object-fit: cover;
+}
+
+.background_maincontent3{
+    position: absolute;
+    top: 10%;
+    right: 40%;
+  
+    width: 45%;
+   
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+.adjust_maincontent3{
+    padding: 50px;
+}
+
+.main_text3_line1{
+    font-family: 'Great Vibes', cursive;
+    font-size: 50px;
+    color: #c49b63;
+    margin-bottom: 0px;
+}
+
+.main_text3_line2{
+    font-size:40px; 
+    font-weight:bold;
+}
+
+.main_text3_line3{
+    font-size: 15px;
+    margin-top: 16px;
+    font-family: 'Great Vibes', cursive;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Project Idea Part */
+
+.Project_Idea_Part{
+    padding:100px 205px;
+    font-family: 'Titillium Web', sans-serif;
+}
+.pip_dark{
+    padding:100px 205px;
+    font-family: 'Titillium Web', sans-serif;
+    background-color:#1f2532;
+}
+
+.Project_Idea_Part2{
+    padding:100px 205px;
+    font-family: 'Titillium Web', sans-serif;
+    background-color:#1f2532 ;
+}
+
+.Project_Overview{
+    align-items: center;
+    text-align: center;
+}
+
+.Project_Text{
+    font-size: 10px;
+    color: #1f2532;
+}
+
+.Main_Part_Text{
+    font-size: 35px;
+    color:#1f2532
+}
+.mpt_dark{
+    font-size: 35px;
+    color:white;
+}
+
+.Project_Overview{
+    align-items: center;
+    text-align: center;
+}
+
+.Project_Text2{
+    font-size: 10px;
+    color: white;
+}
+
+.Main_Part_Text2{
+    font-size: 35px;
+    color:white
+}
+
+.Main_Part_Text2_1{
+    color: white;
+}
+
+.Project_Maincontent{
+    display: flex;
+}
+
+.Box1_1{
+    background-color:white;
+    border-color:#eeeeee;
+    border-style:solid;
+    border-width: 1px;
+    color:#9a9a9a;
+    line-height:22.4px;
+    margin: 0px -1px -1px 0px;
+    padding:50px 20px;
+    width:50%
+}
+
+.box11_dark{
+    background-color:#1f2532;
+    border-color:#eeeeee;
+    border-style:solid;
+    border-width: 1px;
+    color:#9a9a9a;
+    line-height:22.4px;
+    margin: 0px -1px -1px 0px;
+    padding:50px 20px;
+    width:50%
+}
+
+.TnT{
+    font-family: 'Great Vibes', cursive;
+    color: red;
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom:5px
+}
+
+.Box1_1_T1{
+    display: flex;
+}
+
+.Note1{
+    margin-left: 20px;
+    align-items: center;
+}
+
+.MT1{
+    color: #1f2532;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.MT1_dark{
+    color: white;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.MT2{
+    color: #1f2532;
+}
+
+.ImgP img{
+    width: 100%;
+    align-items: center;
+    text-align: center;
+}
+
+.MT3{
+    color: #1f2532;
+    margin-top: 45%;
+}
+
+.MT4{
+    color: white;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.MT4_dark{
+    color: #1f2532;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.Box1_2{
+    background-color:#1f2532;
+    border-color:red;
+    border-style:solid;
+    border-width: 1px;
+    color:#9a9a9a;
+    line-height:22.4px;
+    margin: 0px -1px -1px 0px;
+    padding:50px 20px;
+    
+    width:50%
+}
+
+.mode_btn_1{ /*dark mode */
+    background-color: aqua;
+    color: black;
+    padding: 6px 10.5px;
+    border-radius: 4px;
+    border-color: #46b8da;
+    position: fixed;
+    bottom: 40px;
+    right: 10px;
+    }
+    
+.mode_btn_2{ /*light mode */
+    background-color: aqua;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 4px;
+    border-color: #46b8da;
+    position: fixed;
+    bottom: 3px;
+    right: 10px;
+}
+
+.all_dark{
+    background-color:#1f2532
+}
