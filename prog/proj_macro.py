@@ -46,6 +46,8 @@ def replay_macro(macro_name): #use threading to play BOTH mouse and keyboard eve
                 break
         except EOFError:
             break
+        except IndexError:
+            pass
     f.close()
     if len(k_events) == 0:
         return 1
@@ -65,7 +67,7 @@ def replay_macro(macro_name): #use threading to play BOTH mouse and keyboard eve
     return 0
 
 def testmac():
-    name = 'hehe'
-    my_macro = record_some_macro(name)
+    name = 'circle'
+    #my_macro = record_some_macro(name)
     replay_macro(name)
 #testmac()

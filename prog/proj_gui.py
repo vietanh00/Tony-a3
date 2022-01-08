@@ -36,7 +36,7 @@ def track_btn(some_button):
         elementz.append(some_button)
 def clear_macros():
     filename = pm.filename
-    empty_list = [2]
+    empty_list = [1]
     empty_list.clear()
     with open(filename, 'wb') as f:
         dill.dump(empty_list, f)
