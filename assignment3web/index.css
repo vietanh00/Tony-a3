@@ -6,7 +6,12 @@
 body {
     font-family: 'DM Sans', sans-serif;
 }
-
+.body_bg{
+    background-color: white;
+}
+.body_bgdark{
+    background-color: #2c3238;
+}
 .Header1{
     Background-color: white;
     padding: 30px 200px;
@@ -14,10 +19,23 @@ body {
     display: flex;
     justify-content: space-between;
 }
-
+.Header1dark{
+    Background-color: #2c3238;
+    padding: 30px 200px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
 .Text1 {
     display: flex;
     Color: White;
+    text-align: center; 
+    justify-content: space-between;
+    width: 56%;
+}
+.Text1dark {
+    display: flex;
+    Color: #2c3238;
     text-align: center; 
     justify-content: space-between;
     width: 56%;
@@ -28,11 +46,22 @@ body {
     color:black;
     font-family: 'Lato', sans-serif;
     font-family: 'Oswald', sans-serif;
-    
+}
+.Text1dark a{
+    text-decoration: none;
+    color:white;
+    font-family: 'Lato', sans-serif;
+    font-family: 'Oswald', sans-serif;
 }
 
 .Project_Content{
     Background-color: white;
+    padding: 160px 190px;
+    display: flex;
+    justify-content: space-between;
+}
+.Project_Contentdark{
+    Background-color: #2c3238;
     padding: 160px 190px;
     display: flex;
     justify-content: space-between;
@@ -46,9 +75,12 @@ body {
     color: black;
     width: 95%;
     margin-right: 25px;
-
 }
-
+.Project_Desdark{
+    color: white;
+    width: 95%;
+    margin-right: 25px;
+}
 .Title{
     font-family: 'Titillium Web', sans-serif;
     font-size: 48px;
@@ -63,7 +95,6 @@ body {
 
 .Button1{
     background-color: lightblue;
-   
     box-sizing: border-box;
     padding: 16px 24px;
     color: white;
@@ -72,10 +103,8 @@ body {
     margin-top: 20px;
     cursor: pointer;
     border-radius:5px;
-    
     font-family: 'Titillium Web', sans-serif;
     text-align: center;
-
 }
 
 
@@ -84,28 +113,18 @@ body {
 .Project_Idea_Part{
     padding:0px 205px;
     font-family: 'Titillium Web', sans-serif;
- 
+    background-color: white;
+}
+.Project_Idea_Partdark{
+    padding:0px 205px;
+    font-family: 'Titillium Web', sans-serif;
+    background-color: #2c3238;
 }
 
-.Project_Idea_Part2{
-    padding:100px 205px;
-    font-family: 'Titillium Web', sans-serif;
-    background-color:#1f2532 ;
-}
 
 .Project_Overview{
     align-items: center;
     text-align: center;
-}
-
-.Project_Text{
-    font-size: 10px;
-    color: #1f2532;
-}
-
-.Main_Part_Text{
-    font-size: 35px;
-    color:#1f2532
 }
 
 .Box1_1{
@@ -131,10 +150,15 @@ body {
 
 
 /* Tool and Technology */
+.ToolandTech{
+    background-color: white;
+}
+.ToolandTechdark{
+    background-color: #2c3238;
+}
 .Hardware{
     padding: 100px 175px 15px 175px
 }
-
 
 .Hardware{
     display: flex;
@@ -149,6 +173,14 @@ body {
     color: #1f2532;
     margin-bottom: 5px;
 }
+.HardwareTextdark{
+    font-family: 'Lato', sans-serif;
+    font-family: 'Oswald', sans-serif;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 24px;
+    color: white;
+    margin-bottom: 5px;
+}
 
 .ToolText{
     margin-left: 30px;
@@ -156,11 +188,18 @@ body {
 }
 
 .HardwareText2{
+    color:#1f2532;
     font-size: 14px;
     font-family: 'Lato', sans-serif;
     font-family: 'Oswald', sans-serif;
     font-family: 'Titillium Web', sans-serif;
-
+}
+.HardwareText2dark{
+    color:white;
+    font-size: 14px;
+    font-family: 'Lato', sans-serif;
+    font-family: 'Oswald', sans-serif;
+    font-family: 'Titillium Web', sans-serif;
 }
 
 .Hardware2{
@@ -186,6 +225,11 @@ body {
     font-family: 'Titillium Web', sans-serif;
     background-color:white ;
 }
+.Project_Idea_Part2dark{
+    padding:100px 205px;
+    font-family: 'Titillium Web', sans-serif;
+    background-color:#2c3238 ;
+}
 
 .Project_Overview{
     align-items: center;
@@ -196,10 +240,18 @@ body {
     font-size: 10px;
     color: #1f2532;
 }
+.Project_Textdark{
+    font-size: 10px;
+    color: white;
+}
 
 .Main_Part_Text{
     font-size: 35px;
     color:#1f2532
+}
+.Main_Part_Textdark{
+    font-size: 35px;
+    color:white
 }
 
 .Project_Overview{
@@ -211,14 +263,25 @@ body {
     font-size: 10px;
     color: black;
 }
+.Project_Text2dark{
+    font-size: 10px;
+    color: white;
+}
 
 .Main_Part_Text2{
     font-size: 35px;
-    color:black
+    color:black;
+}
+.Main_Part_Text2dark{
+    font-size: 35px;
+    color:white;
 }
 
 .Main_Part_Text2_1{
     color: black;
+}
+.Main_Part_Text2_1dark{
+    color: white;
 }
 
 .Project_Maincontent{
@@ -226,21 +289,38 @@ body {
 }
 
 .Box1_1{
-background-color:white;
-border-color:#eeeeee;
-border-style:solid;
-border-width: 1px;
-color:#9a9a9a;
-line-height:22.4px;
-margin: 0px -1px -1px 0px;
-padding:50px 20px;
-
-width:50%
+    background-color:white;
+    border-color:#eeeeee;
+    border-style:solid;
+    border-width: 1px;
+    color:#9a9a9a;
+    line-height:22.4px;
+    margin: 0px -1px -1px 0px;
+    padding:50px 20px;
+    width:50%
+}
+.Box1_1dark{
+    background-color:#2c3238;
+    border-color:#eeeeee;
+    border-style:solid;
+    border-width: 1px;
+    color:#9a9a9a;
+    line-height:22.4px;
+    margin: 0px -1px -1px 0px;
+    padding:50px 20px;
+    width:50%
 }
 
 .TnT{
     font-family: 'Great Vibes', cursive;
     color: red;
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom:5px
+}
+.TnTdark{
+    font-family: 'Great Vibes', cursive;
+    color: cyan;
     font-weight: bold;
     font-size: 25px;
     margin-bottom:5px
@@ -263,9 +343,18 @@ width:50%
     flex-direction: column;
     justify-content: space-between;
 }
+.MT1dark{
+    color: white;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
 .MT2{
     color: #1f2532;
+}
+.MT2dark{
+    color: white;
 }
 
 .ImgP img{
@@ -278,9 +367,19 @@ width:50%
     color: #1f2532;
     margin-top: 45%;
 }
+.MT3dark{
+    color: white;
+    margin-top: 45%;
+}
 
 .MT4{
     color: black;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.MT4dark{
+    color: white;
     display:flex;
     flex-direction: column;
     justify-content: space-between;
@@ -297,7 +396,19 @@ width:50%
     padding:50px 20px;
     
     width:50%
-    }
+}
+.Box1_2dark{
+    background-color:#2c3238;
+    border-color:burlywood;
+    border-style:solid;
+    border-width: 1px;
+    color:#9a9a9a;
+    line-height:22.4px;
+    margin: 0px -1px -1px 0px;
+    padding:50px 20px;
+    
+    width:50%
+}
 
 input {
     appearance: none;
@@ -315,10 +426,10 @@ input::before {
     font: bold 14px Verdana;
 }
 :checked {
-    padding-left: 8px;
+    padding-left: 25px;
     color:#1f2532;
     text-shadow: 0 1px white;
-    background-color: #2c3238;
+    background-color: black;
     background-position: 34px;
 }
 :checked::before {

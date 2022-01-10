@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Team Mystery: Assignment 3 Website</title>
-
+    <script src="web3scripts.js"> </script>
     <link rel="stylesheet" href="index.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,9 +16,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300&family=Oswald:wght@600&family=Titillium+Web:wght@600&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="body_bg">
     <label class="switch">
-        <input type="checkbox" id="togBtn">
+        <input type="checkbox" id="togBtn" onchange="toggled()">
     </label>
     <div id = "home"
     class="Background1">
@@ -53,7 +53,7 @@
       <div class = "Project_Overview">
           <div class="Project_Text">Project Idea Planning</div>
           <div class="Main_Part_Text">Planning Progress</div>
-          <div>We have total 4 main process to build this digital assistant
+          <div class=HardwareText2>We have total 4 main process to build this digital assistant
           </div>
       </div>
       <div class = "Project_Maincontent">
@@ -105,7 +105,7 @@
         <div class = "Project_Overview">
         
             <div class="Main_Part_Text" style="margin-top: 30px">Tools and Technology Features</div>
-            <div>TONY THE BOT - A DIGITAL ASSISTANT
+            <div class="HardwareText2">TONY THE BOT - A DIGITAL ASSISTANT
             </div>
         </div>
 
@@ -165,7 +165,7 @@
     class = "Project_Idea_Part">
        <div class = "Project_Overview">
            <div class="Main_Part_Text">Project Demonstration</div>
-           <div>2 short demonstrations of Tony
+           <div class="HardwareText2">2 short demonstrations of Tony
            </div>
        </div>
        <div class = "Project_Maincontent">
@@ -194,9 +194,6 @@
           
            </div>
            
- 
-           
-  
        </div>
 
        <div id = "member" 
