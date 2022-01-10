@@ -1,3 +1,4 @@
+// #2c3238 dark bg, #ffffff dark title text, #9aa6b3 dark content text
 const light = ["MT4", "MT3", "MT2", "MT1","TnT", "Main_Part_Text2_1", "Main_Part_Text2",
         "Project_Text2", "Main_Part_Text", "Project_Text", "Project_Idea_Part2", "HardwareText2",
         "HardwareText", "Project_Des", "Project_Content", "Text1", "Header1","Project_Idea_Part","ToolandTech", 
@@ -31,5 +32,4 @@ function toggled(){
     } else { //unchecked -> in light mode
         light_mode();
     }
-
 }
