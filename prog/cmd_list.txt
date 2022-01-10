@@ -13,5 +13,5 @@ Keyboard:
 Misc:
     8) 'web <site>': launch <site> on the default browser. No 'www' please.
         e.g. web youtube.com    
-    9) 'minimize/maximize' : minimize/maximize the current window (only for windows)
+    9) 'minimize/maximize' : minimize/maximize the current window
     10)'search <query>' : search for <query> on Google. Depends on connection.

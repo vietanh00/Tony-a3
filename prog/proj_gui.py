@@ -104,6 +104,11 @@ def about_mode(master):
     big_about = Label(master, text="About", **main_app_text, font=('Arial', 20))
     big_about.place(x=20, y=30)
     track_btn(big_about)
+    basic_cmds = Label(master, text='off\nmouse/drag north/south/east/west\nscroll up/down\nleft/right click\n'
+    + 'press <key>\ntype <text>\ncombine <keys>\nweb <site>\nminimize/maximize\nsearch <query>',
+         **main_app_text)
+    basic_cmds.place(x=20, y=60)
+    track_btn(basic_cmds)
 #Change widget color upon being hovered
 def on_enter(e): 
     e.widget['background'] = '#505050'
