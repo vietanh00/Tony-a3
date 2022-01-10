@@ -5,7 +5,6 @@
 
 body {
     font-family: 'DM Sans', sans-serif;
-    
 }
 
 .Header1{
@@ -14,7 +13,6 @@ body {
     align-items: center;
     display: flex;
     justify-content: space-between;
-
 }
 
 .Text1 {
@@ -228,7 +226,7 @@ body {
 }
 
 .Box1_1{
-background-color:#ffffff;
+background-color:white;
 border-color:#eeeeee;
 border-style:solid;
 border-width: 1px;
@@ -300,3 +298,31 @@ width:50%
     
     width:50%
     }
+
+input {
+    appearance: none;
+    position: fixed;
+    bottom: 200px;
+    left: 10px;
+    width: 100px;
+    padding: 8px 0 8px 33px;
+    border-radius: 16px;
+    background: radial-gradient(circle 12px, white 100%, transparent calc(100% + 1px)) #ccc -34px;
+    transition: 0.3s ease-in-out;
+    }
+input::before {
+    content: "Light";
+    font: bold 14px Verdana;
+}
+:checked {
+    padding-left: 8px;
+    color:#1f2532;
+    text-shadow: 0 1px white;
+    background-color: #2c3238;
+    background-position: 34px;
+}
+:checked::before {
+    color:white;
+    text-shadow: 0 1px black;
+    content: "Dark";
+}
