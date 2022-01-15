@@ -1,0 +1,280 @@
+.Background5{
+    margin: auto;
+    background-color: black;
+    color:white;
+    width: 100%;
+    height:30vh;
+}
+
+.Line5{
+    border: 1px solid white;
+}
+
+.Footer5{
+    display:flex;
+    color:white;
+ 
+    justify-content: space-between;
+    width: 75%;
+    margin: auto;
+    height:40%;
+    font-family:Arial, Helvetica, sans-serif;
+    margin-top: 20px;
+}
+
+.logo1 img{
+    width: 89px;
+    height:90px;
+}
+
+.Footer5_maincontent1{
+    width:30%;
+    font-size:20px;
+}
+
+.Maincontent1_text1{
+    font-weight: bold;
+}
+
+.Maincontent1_text2{
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.Maincontent2_text1{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.Maincontent2_text2{
+    display: flex; margin-top: 10px;
+}
+
+.Maincontent2_text3{
+    display:flex; margin-top: 10px;
+}
+
+.Footer_end{
+    margin-top: 30px; 
+    text-align: center; 
+    font-size: 16px; 
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.Background1{
+    background-image:
+    url(./AI4.jpg);
+    background-size: 100%;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: column;
+    background-attachment: fixed;
+}
+
+.Box1{
+    box-shadow: 0 0 5px rgb(0 0 0);
+    position: fixed;
+    width: 100%;
+    top: 0%;
+    z-index: 9999;
+    
+}
+
+
+
+.Header1{
+    align-items: center;
+    display: flex;
+    font-size: 15px;
+    font-weight: 300;
+    justify-content: space-between;
+    line-height: 27px;
+    margin: 0px 173.6px;
+    padding: 8px 15px;
+    
+}
+
+.logo1 img{
+    width: 91px;
+    height:80px;
+}
+
+.text1{
+    font-family: DM Sans;
+    font-weight: light;
+    font-size: 20px;
+    letter-spacing: 0.3px;
+    color: white;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 40%;
+    cursor: pointer;
+}
+.Box1.abc{
+    background-color: black !important;
+    transition: 1s;
+}
+
+a:hover{
+    color: #E00B46;
+}
+
+a:hover{
+    color: #E00B46;
+}
+
+a:hover{
+    color: #E00B46;
+}
+
+a:hover{
+    color: #E00B46;
+}
+
+a {
+    text-decoration: none !important;
+    color: white ;}
+
+.a1:hover{background: #c49b63;
+          transition: 0.5s;
+          color: white;}
+
+.a2:hover{background: transparent;
+          transition: 0.5s;
+          color: #c49b63;}
+
+
+
+.welcome { 
+    text-align: center;
+    width:100%;                
+    font-family: 'Lato', sans-serif;
+    font-family: 'Oswald', sans-serif;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 50px;
+    color: #212529;}
+
+/**Member**/
+
+.Project_Idea_Part2{
+    padding:100px 205px;
+    font-family: 'Titillium Web', sans-serif;
+    background-color:lightblue ;
+}
+
+.Project_Overview{
+    align-items: center;
+    text-align: center;
+}
+
+.Project_Text{
+    font-size: 10px;
+    color: #1f2532;
+}
+
+.Main_Part_Text{
+    font-size: 35px;
+    color:#1f2532
+}
+
+.Project_Overview{
+    align-items: center;
+    text-align: center;
+}
+
+.Project_Text2{
+    font-size: 10px;
+    color: white;
+}
+
+.Main_Part_Text2{
+    font-size: 35px;
+    color:white
+}
+
+.Main_Part_Text2_1{
+    color: white;
+}
+
+.Project_Maincontent{
+    display: flex;
+}
+
+.Box1_1{
+background-color:#ffffff;
+border-color:#eeeeee;
+border-style:solid;
+border-width: 1px;
+color:#9a9a9a;
+line-height:22.4px;
+margin: 0px -1px -1px 0px;
+padding:50px 20px;
+
+width:50%
+}
+
+.TnT{
+    font-family: 'Great Vibes', cursive;
+    color: red;
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom:5px
+}
+
+.Box1_1_T1{
+    display: flex;
+
+}
+
+.Note1{
+    margin-left: 20px;
+    align-items: center;
+    
+}
+
+.MT1{
+    color: #1f2532;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.MT2{
+    color: lightcoral;
+}
+
+.ImgP img{
+    width: 100%;
+    align-items: center;
+    text-align: center;
+}
+
+.MT3{
+    color: #1f2532;
+    margin-top: 45%;
+}
+
+.MT4{
+    color: white;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.Box1_2{
+    background-color:lightblue;
+    border-color:red;
+    border-style:solid;
+    border-width: 1px;
+    color:#9a9a9a;
+    line-height:22.4px;
+    margin: 0px -1px -1px 0px;
+    padding:50px 20px;
+    
+    width:50%
+    }
+
