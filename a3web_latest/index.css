@@ -119,22 +119,25 @@
     transition: 1s;
 }
 
-a:hover{
+.home a:hover{
+    color: #E00B46;
+}
+
+.menu a:hover{
+    color: #E00B46;
+}
+
+.about a:hover{
+    color: #E00B46;
+}
+
+.shop a:hover{
     color: #E00B46;
 }
 
 a:hover{
-    color: #E00B46;
+    color: white;
 }
-
-a:hover{
-    color: #E00B46;
-}
-
-a:hover{
-    color: #E00B46;
-}
-
 a {
     text-decoration: none !important;
     color: white ;}
